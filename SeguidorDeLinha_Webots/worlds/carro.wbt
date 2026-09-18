@@ -1,0 +1,3123 @@
+#VRML_SIM R2025a utf8
+
+# ===========================================================================
+# PROJETO: Simulacao de Robo Seguidor de Linha (Webots)
+# Aluno: Matheus Ferreira Fagundes      RA: 23149
+# Pista: "Estadio Ondulado" - pista propria, com dois trechos retos, quatro
+#        curvas arredondadas e um trecho ondulado exclusivo (assinatura da
+#        pista), criada especialmente para este trabalho.
+# Repositorio GitHub do projeto: <COLOQUE_AQUI_O_LINK_DO_SEU_GITHUB>
+# Baseado no material de aula (Robo_Webot_base1 / Robo - Sensor) fornecido
+# pelo professor, com robo redesenhado (chassi + "nariz") e 3 sensores
+# infravermelhos de linha (esquerdo, central, direito) adicionados.
+# ===========================================================================
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.205 0.226 0.952 1.523
+  position -0.18 -1.55 0.85
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2.2 1.6
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      # 1a entrada: arquivo local (funciona offline, sem depender do GitHub)
+      # 2a entrada: SUBSTITUA pelo link "raw" da SUA imagem no GitHub depois
+      #             de publicar o repositorio (mesmo estilo do link de
+      #             referencia enviado pelo professor: .../mapas/arquivo.png)
+      url [
+        "textures/pista_textura.png"
+        "<COLOQUE_AQUI_O_LINK_RAW_GITHUB_DA_SUA_IMAGEM_DE_PISTA>"
+      ]
+      repeatS FALSE
+      repeatT FALSE
+    }
+    roughness 1
+    metalness 0
+  }
+  wallHeight 0.05
+}
+  DEF PISTA Group {
+    children [
+      Pose {
+        translation -0.4900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance DEF PISTA_APPEARANCE PBRAppearance {
+              baseColor 0.03 0.03 0.03
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4100 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4300 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4500 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4700 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4900 -0.5000 0.0050
+        rotation 0 0 1 0.00000
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5098 -0.4997 0.0050
+        rotation 0 0 1 0.03272
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5294 -0.4984 0.0050
+        rotation 0 0 1 0.09817
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5488 -0.4958 0.0050
+        rotation 0 0 1 0.16362
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5681 -0.4920 0.0050
+        rotation 0 0 1 0.22907
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5870 -0.4869 0.0050
+        rotation 0 0 1 0.29452
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6056 -0.4806 0.0050
+        rotation 0 0 1 0.35997
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6237 -0.4731 0.0050
+        rotation 0 0 1 0.42542
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6413 -0.4644 0.0050
+        rotation 0 0 1 0.49087
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6583 -0.4546 0.0050
+        rotation 0 0 1 0.55632
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6746 -0.4437 0.0050
+        rotation 0 0 1 0.62177
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6902 -0.4318 0.0050
+        rotation 0 0 1 0.68722
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7050 -0.4188 0.0050
+        rotation 0 0 1 0.75267
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7188 -0.4050 0.0050
+        rotation 0 0 1 0.81812
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7318 -0.3902 0.0050
+        rotation 0 0 1 0.88357
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7437 -0.3746 0.0050
+        rotation 0 0 1 0.94902
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7546 -0.3583 0.0050
+        rotation 0 0 1 1.01447
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7644 -0.3413 0.0050
+        rotation 0 0 1 1.07992
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7731 -0.3237 0.0050
+        rotation 0 0 1 1.14537
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7806 -0.3056 0.0050
+        rotation 0 0 1 1.21082
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7869 -0.2870 0.0050
+        rotation 0 0 1 1.27627
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7920 -0.2681 0.0050
+        rotation 0 0 1 1.34172
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7958 -0.2488 0.0050
+        rotation 0 0 1 1.40717
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7984 -0.2294 0.0050
+        rotation 0 0 1 1.47262
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7997 -0.2098 0.0050
+        rotation 0 0 1 1.53807
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.1900 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.1700 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.1500 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.1300 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.1100 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.0900 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.0700 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.0500 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.0300 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 -0.0100 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.0100 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.0300 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.0500 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.0700 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.0900 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.1100 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.1300 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.1500 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.1700 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.8000 0.1900 0.0050
+        rotation 0 0 1 1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7997 0.2098 0.0050
+        rotation 0 0 1 1.60352
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7984 0.2294 0.0050
+        rotation 0 0 1 1.66897
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7958 0.2488 0.0050
+        rotation 0 0 1 1.73442
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7920 0.2681 0.0050
+        rotation 0 0 1 1.79987
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7869 0.2870 0.0050
+        rotation 0 0 1 1.86532
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7806 0.3056 0.0050
+        rotation 0 0 1 1.93077
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7731 0.3237 0.0050
+        rotation 0 0 1 1.99622
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7644 0.3413 0.0050
+        rotation 0 0 1 2.06167
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7546 0.3583 0.0050
+        rotation 0 0 1 2.12712
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7437 0.3746 0.0050
+        rotation 0 0 1 2.19257
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7318 0.3902 0.0050
+        rotation 0 0 1 2.25802
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7188 0.4050 0.0050
+        rotation 0 0 1 2.32347
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.7050 0.4188 0.0050
+        rotation 0 0 1 2.38892
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6902 0.4318 0.0050
+        rotation 0 0 1 2.45437
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6746 0.4437 0.0050
+        rotation 0 0 1 2.51982
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6583 0.4546 0.0050
+        rotation 0 0 1 2.58527
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6413 0.4644 0.0050
+        rotation 0 0 1 2.65072
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6237 0.4731 0.0050
+        rotation 0 0 1 2.71617
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.6056 0.4806 0.0050
+        rotation 0 0 1 2.78162
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5870 0.4869 0.0050
+        rotation 0 0 1 2.84707
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5681 0.4920 0.0050
+        rotation 0 0 1 2.91252
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5488 0.4958 0.0050
+        rotation 0 0 1 2.97797
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5294 0.4984 0.0050
+        rotation 0 0 1 3.04342
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.5098 0.4997 0.0050
+        rotation 0 0 1 3.10887
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4900 0.5006 0.0050
+        rotation 0 0 1 3.08345
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4700 0.5028 0.0050
+        rotation 0 0 1 2.98021
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0243 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4500 0.5068 0.0050
+        rotation 0 0 1 2.91194
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0246 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4300 0.5116 0.0050
+        rotation 0 0 1 2.89213
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0248 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.4100 0.5164 0.0050
+        rotation 0 0 1 2.92743
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0246 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3900 0.5198 0.0050
+        rotation 0 0 1 3.01894
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0242 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3700 0.5208 0.0050
+        rotation 0 0 1 -3.12466
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3500 0.5188 0.0050
+        rotation 0 0 1 -2.95974
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0244 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3300 0.5135 0.0050
+        rotation 0 0 1 -2.80246
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0254 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.3100 0.5050 0.0050
+        rotation 0 0 1 -2.68056
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0268 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2900 0.4941 0.0050
+        rotation 0 0 1 -2.60787
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0279 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2700 0.4820 0.0050
+        rotation 0 0 1 -2.58936
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0282 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2500 0.4702 0.0050
+        rotation 0 0 1 -2.62947
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0275 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2300 0.4603 0.0050
+        rotation 0 0 1 -2.73620
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0261 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.2100 0.4537 0.0050
+        rotation 0 0 1 -2.91681
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0246 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1900 0.4516 0.0050
+        rotation 0 0 1 3.12355
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1700 0.4546 0.0050
+        rotation 0 0 1 2.86657
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0249 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1500 0.4628 0.0050
+        rotation 0 0 1 2.65321
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0272 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1300 0.4754 0.0050
+        rotation 0 0 1 2.50868
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0298 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.1100 0.4914 0.0050
+        rotation 0 0 1 2.43020
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0317 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0900 0.5090 0.0050
+        rotation 0 0 1 2.40992
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0323 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0700 0.5263 0.0050
+        rotation 0 0 1 2.44635
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0313 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0500 0.5414 0.0050
+        rotation 0 0 1 2.54730
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0290 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0300 0.5526 0.0050
+        rotation 0 0 1 2.72740
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0262 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.0100 0.5585 0.0050
+        rotation 0 0 1 2.99030
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0243 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0100 0.5585 0.0050
+        rotation 0 0 1 -2.99030
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0243 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0300 0.5526 0.0050
+        rotation 0 0 1 -2.72740
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0262 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0500 0.5414 0.0050
+        rotation 0 0 1 -2.54730
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0290 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0700 0.5263 0.0050
+        rotation 0 0 1 -2.44635
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0313 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.0900 0.5090 0.0050
+        rotation 0 0 1 -2.40992
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0323 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1100 0.4914 0.0050
+        rotation 0 0 1 -2.43020
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0317 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1300 0.4754 0.0050
+        rotation 0 0 1 -2.50868
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0298 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1500 0.4628 0.0050
+        rotation 0 0 1 -2.65321
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0272 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1700 0.4546 0.0050
+        rotation 0 0 1 -2.86657
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0249 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.1900 0.4516 0.0050
+        rotation 0 0 1 -3.12355
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2100 0.4537 0.0050
+        rotation 0 0 1 2.91681
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0246 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2300 0.4603 0.0050
+        rotation 0 0 1 2.73620
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0261 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2500 0.4702 0.0050
+        rotation 0 0 1 2.62947
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0275 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2700 0.4820 0.0050
+        rotation 0 0 1 2.58936
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0282 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.2900 0.4941 0.0050
+        rotation 0 0 1 2.60787
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0279 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3100 0.5050 0.0050
+        rotation 0 0 1 2.68056
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0268 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3300 0.5135 0.0050
+        rotation 0 0 1 2.80246
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0254 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3500 0.5188 0.0050
+        rotation 0 0 1 2.95974
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0244 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3700 0.5208 0.0050
+        rotation 0 0 1 3.12466
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.3900 0.5198 0.0050
+        rotation 0 0 1 -3.01894
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0242 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4100 0.5164 0.0050
+        rotation 0 0 1 -2.92743
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0246 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4300 0.5116 0.0050
+        rotation 0 0 1 -2.89213
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0248 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4500 0.5068 0.0050
+        rotation 0 0 1 -2.91194
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0246 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4700 0.5028 0.0050
+        rotation 0 0 1 -2.98021
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0243 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.4900 0.5006 0.0050
+        rotation 0 0 1 -3.08345
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5098 0.4997 0.0050
+        rotation 0 0 1 -3.10887
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5294 0.4984 0.0050
+        rotation 0 0 1 -3.04342
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5488 0.4958 0.0050
+        rotation 0 0 1 -2.97797
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5681 0.4920 0.0050
+        rotation 0 0 1 -2.91252
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5870 0.4869 0.0050
+        rotation 0 0 1 -2.84707
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6056 0.4806 0.0050
+        rotation 0 0 1 -2.78162
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6237 0.4731 0.0050
+        rotation 0 0 1 -2.71617
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6413 0.4644 0.0050
+        rotation 0 0 1 -2.65072
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6583 0.4546 0.0050
+        rotation 0 0 1 -2.58527
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6746 0.4437 0.0050
+        rotation 0 0 1 -2.51982
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6902 0.4318 0.0050
+        rotation 0 0 1 -2.45437
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7050 0.4188 0.0050
+        rotation 0 0 1 -2.38892
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7188 0.4050 0.0050
+        rotation 0 0 1 -2.32347
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7318 0.3902 0.0050
+        rotation 0 0 1 -2.25802
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7437 0.3746 0.0050
+        rotation 0 0 1 -2.19257
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7546 0.3583 0.0050
+        rotation 0 0 1 -2.12712
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7644 0.3413 0.0050
+        rotation 0 0 1 -2.06167
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7731 0.3237 0.0050
+        rotation 0 0 1 -1.99622
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7806 0.3056 0.0050
+        rotation 0 0 1 -1.93077
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7869 0.2870 0.0050
+        rotation 0 0 1 -1.86532
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7920 0.2681 0.0050
+        rotation 0 0 1 -1.79987
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7958 0.2488 0.0050
+        rotation 0 0 1 -1.73442
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7984 0.2294 0.0050
+        rotation 0 0 1 -1.66897
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7997 0.2098 0.0050
+        rotation 0 0 1 -1.60352
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.1900 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.1700 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.1500 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.1300 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.1100 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.0900 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.0700 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.0500 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.0300 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 0.0100 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.0100 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.0300 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.0500 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.0700 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.0900 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.1100 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.1300 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.1500 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.1700 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.8000 -0.1900 0.0050
+        rotation 0 0 1 -1.57080
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0240 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7997 -0.2098 0.0050
+        rotation 0 0 1 -1.53807
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7984 -0.2294 0.0050
+        rotation 0 0 1 -1.47262
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7958 -0.2488 0.0050
+        rotation 0 0 1 -1.40717
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7920 -0.2681 0.0050
+        rotation 0 0 1 -1.34172
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7869 -0.2870 0.0050
+        rotation 0 0 1 -1.27627
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7806 -0.3056 0.0050
+        rotation 0 0 1 -1.21082
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7731 -0.3237 0.0050
+        rotation 0 0 1 -1.14537
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7644 -0.3413 0.0050
+        rotation 0 0 1 -1.07992
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7546 -0.3583 0.0050
+        rotation 0 0 1 -1.01447
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7437 -0.3746 0.0050
+        rotation 0 0 1 -0.94902
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7318 -0.3902 0.0050
+        rotation 0 0 1 -0.88357
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7188 -0.4050 0.0050
+        rotation 0 0 1 -0.81812
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.7050 -0.4188 0.0050
+        rotation 0 0 1 -0.75267
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6902 -0.4318 0.0050
+        rotation 0 0 1 -0.68722
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6746 -0.4437 0.0050
+        rotation 0 0 1 -0.62177
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6583 -0.4546 0.0050
+        rotation 0 0 1 -0.55632
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6413 -0.4644 0.0050
+        rotation 0 0 1 -0.49087
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6237 -0.4731 0.0050
+        rotation 0 0 1 -0.42542
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.6056 -0.4806 0.0050
+        rotation 0 0 1 -0.35997
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5870 -0.4869 0.0050
+        rotation 0 0 1 -0.29452
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5681 -0.4920 0.0050
+        rotation 0 0 1 -0.22907
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5488 -0.4958 0.0050
+        rotation 0 0 1 -0.16362
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5294 -0.4984 0.0050
+        rotation 0 0 1 -0.09817
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.5098 -0.4997 0.0050
+        rotation 0 0 1 -0.03272
+        children [
+          Shape {
+            appearance USE PISTA_APPEARANCE
+            geometry Box {
+              size 0.0236 0.0350 0.0100
+            }
+          }
+        ]
+      }
+    ]
+  }Robot {
+  translation -0.5 -0.5 0.001
+  rotation 0 0 1 0
+  # ---------------------------------------------------------
+  # Projeto: Seguidor de Linha - Simulacao Webots
+  # Aluno: Matheus Ferreira Fagundes   RA: 23149
+  # Disciplina/Turma: <PREENCHER>
+  # Baseado no modelo de carro fornecido em sala (Robo_Webot_base1 / Robo - Sensor)
+  # IMPORTANTE: a estrutura das rodas/juntas abaixo foi mantida EXATAMENTE
+  # igual ao arquivo original do professor (testado em sala), para garantir
+  # estabilidade fisica. Apenas cores, sensores e o corpo foram alterados.
+  # ---------------------------------------------------------
+  children [
+    Pose {
+      children [
+        # ---------- Roda esquerda (motorE) - identica ao original ----------
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0
+            axis 0 1 0
+            anchor 0 0 0.025
+          }
+          device [
+            RotationalMotor {
+              name "motorE"
+              consumptionFactor 70
+              maxVelocity 100
+            }
+          ]
+          endPoint Solid {
+            translation 0 0 0
+            rotation 0 1 0 0
+            children [
+              DEF RodaE Pose {
+                translation 0 0.055 0.025
+                rotation 1 0 0 1.5707996938995747
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0.1 0.1 0.1
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Cylinder {
+                      height 0.01
+                      radius 0.025
+                    }
+                  }
+                ]
+              }
+            ]
+            boundingObject USE RodaE
+            physics Physics {
+              mass 0.05
+            }
+          }
+        }
+        # ---------- Roda direita (motorD) - identica ao original ----------
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0
+            axis 0 1 0
+            anchor 0 0 0.025
+          }
+          device [
+            RotationalMotor {
+              name "motorD"
+              consumptionFactor 70
+              maxVelocity 100
+            }
+          ]
+          endPoint Solid {
+            translation 0 0 0
+            rotation 0 1 0 0
+            children [
+              DEF RodaD Pose {
+                translation 0 -0.055 0.025
+                rotation 1 0 0 1.5707996938995747
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0.1 0.1 0.1
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Cylinder {
+                      height 0.01
+                      radius 0.025
+                    }
+                  }
+                ]
+              }
+            ]
+            name "solid(1)"
+            boundingObject USE RodaD
+            physics Physics {
+              density -1
+              mass 0.05
+            }
+          }
+        }
+        # ---------- Chassi (novo design: corpo azul + "nariz" laranja) ----------
+        Pose {
+          translation 0 0 0.07
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.1 0.35 0.85
+                roughness 0.6
+                metalness 0.1
+              }
+              geometry Box {
+                size 0.1 0.09 0.05
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0.07 0 0.065
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.55 0.1
+                roughness 0.5
+                metalness 0.1
+              }
+              geometry Cone {
+                bottomRadius 0.03
+                height 0.05
+              }
+            }
+          ]
+        }
+        # ---------- Sensores infravermelhos de linha (apontados para o chao) ----------
+        # Os tres sensores ficam na frente do robo, olhando para baixo (eixo local
+        # +x do sensor e' rotacionado 90 graus em torno de Y, apontando para -Z).
+        # Estes sensores NAO tem boundingObject/physics proprios, entao nao afetam
+        # a estabilidade fisica do robo (sao apenas visuais + raio de deteccao).
+        # ESQUERDO
+        Pose {
+          translation 0.06 0.02 0.02
+          children [
+            DistanceSensor {
+              rotation 0 1 0 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.8 0.1 0.1
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.006
+                    radius 0.006
+                  }
+                }
+              ]
+              name "ds_esquerda"
+              lookupTable [
+                0 0 0
+                0.1 10 0
+              ]
+              type "infra-red"
+              redColorSensitivity 0.5
+            }
+          ]
+        }
+        # CENTRAL
+        Pose {
+          translation 0.06 0 0.02
+          children [
+            DistanceSensor {
+              rotation 0 1 0 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.1 0.8 0.1
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.006
+                    radius 0.006
+                  }
+                }
+              ]
+              name "ds_centro"
+              lookupTable [
+                0 0 0
+                0.1 10 0
+              ]
+              type "infra-red"
+              redColorSensitivity 0.5
+            }
+          ]
+        }
+        # DIREITO
+        Pose {
+          translation 0.06 -0.02 0.02
+          children [
+            DistanceSensor {
+              rotation 0 1 0 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.8 0.1 0.1
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.006
+                    radius 0.006
+                  }
+                }
+              ]
+              name "ds_direita"
+              lookupTable [
+                0 0 0
+                0.1 10 0
+              ]
+              type "infra-red"
+              redColorSensitivity 0.5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  physics Physics {
+    mass 0.05
+  }
+  controller "seguidor_linha"
+  name "carro_seguidor_de_linha"
+}
