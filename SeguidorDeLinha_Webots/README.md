@@ -3,7 +3,7 @@
 **Aluno:** `Matheus Ferreira Fagundes`
 **RA:** `23149`
 **Disciplina/Turma:** `<PREENCHER>`
-**Repositório GitHub:** `<COLOQUE_AQUI_O_LINK_DO_SEU_GITHUB>`
+**Repositório GitHub:** `https://github.com/KittenUzuki/Webot-SeguidorDeLinha`
 
 Projeto desenvolvido a partir do material de aula fornecido pelo professor
 (`Robo_Webot_base1` e `Robo - Sensor`), estendendo o carro de duas rodas
@@ -132,13 +132,14 @@ Não esqueça de subir também o vídeo `.mp4` gerado pelo Webots (ou um link
 para ele, caso o GitHub recuse arquivos muito grandes — nesse caso, uma
 opção é usar o *Git LFS* ou anexar o vídeo separadamente na entrega).
 
-## Antes de entregar, confira nos dois arquivos:
+## Antes de entregar, confira:
 
-- `worlds/carro.wbt` → nome, RA e link do GitHub já preenchidos.
+- `worlds/carro.wbt` → nome, RA e links do GitHub já preenchidos
+  (repositório: https://github.com/KittenUzuki/Webot-SeguidorDeLinha).
 - `controllers/seguidor_linha/seguidor_linha.py` → mesmos dados no
   cabeçalho do arquivo.
-- Falta só substituir `<COLOQUE_AQUI_O_LINK_RAW_GITHUB_DA_SUA_IMAGEM_DE_PISTA>`
-  e `<COLOQUE_AQUI_O_LINK_DO_SEU_GITHUB>` depois de publicar o repositório.
+- Gerar e anexar o vídeo `.mp4` do Webots mostrando o carro dando a volta
+  completa na pista.
 
 ## Se o carro se comportar de forma estranha (tremendo, afundando, voando)
 

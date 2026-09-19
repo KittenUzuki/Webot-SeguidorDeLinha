@@ -4,9 +4,6 @@
  PROJETO....: Robo Seguidor de Linha - Simulacao Webots
  ALUNO......: Matheus Ferreira Fagundes
  RA.........: 23149
- TURMA/DISC.: <PREENCHER>
- PISTA......: "Estadio Ondulado" (pista propria - ver worlds/carro.wbt)
- REPOSITORIO: <COLOQUE_AQUI_O_LINK_DO_SEU_GITHUB>
 
  DESCRICAO GERAL
  ----------------
